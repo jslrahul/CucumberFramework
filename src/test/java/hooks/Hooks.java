@@ -38,6 +38,8 @@ public class Hooks {
 	public void closeBrowser(Scenario scenario) {
 		String scenarioName = scenario.getName().replace(" ", "_");
 
+
+		// added condition to take screenshot
 		if(scenario.isFailed()) {
 		byte[]srcFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 		scenario.attach(srcFile, "png/jpeg", scenarioName);
