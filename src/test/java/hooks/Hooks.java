@@ -2,6 +2,8 @@ package hooks;
 
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import factory.BrowserFactory;
@@ -34,13 +36,13 @@ public class Hooks {
 
 	@After
 	public void closeBrowser(Scenario scenario) {
-		/*String scenarioName = scenario.getName().replace(" ", "_");
+		String scenarioName = scenario.getName().replace(" ", "_");
 
 		if(scenario.isFailed()) {
 		byte[]srcFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 		scenario.attach(srcFile, "png/jpeg", scenarioName);
 		}
-		 */
+		 
 		driver.quit();
 		System.out.println("closing the browser after the scenarios is executed");
 
